@@ -711,25 +711,14 @@ a {
 }
 
 @media (max-width: 640px) {
-    .container {
-        width: min(100% - 22px, var(--container));
-    }
-
-    .navbar-inner {
-        min-height: 78px;
-    }
-
-    .brand-logo {
-        height: 48px;
-    }
-
     .hero {
-        min-height: 92vh;
+        min-height: 100svh;
     }
 
     .hero-bg {
+        background-image: url("../img/tlo-mobile.png");
         background-size: cover;
-        background-position: center 12%;
+        background-position: center center;
     }
 
     .hero-content {
