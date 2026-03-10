@@ -528,6 +528,12 @@ a {
     color: var(--text-soft);
 }
 
+.pricing-table td:nth-child(2) {
+    max-width: 420px;
+    color: #cfcfcf;
+    font-size: 0.95rem;
+}
+
 .pricing-table td:last-child {
     color: #ff3434;
     font-weight: 800;
