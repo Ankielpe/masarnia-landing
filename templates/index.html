@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rzemieślnicza Masarnia JASTEW</title>
+    <meta name="description" content="Rzemieślnicza masarnia JASTEW - tradycja, jakość i smak. Sprawdź cennik produktów i skontaktuj się z nami.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="top-navbar">
+    <div class="container navbar-inner">
+        <a href="#home" class="brand" aria-label="Przejdź do góry strony">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo JASTEW" class="brand-logo">
+        </a>
+
+        <button class="nav-toggle" aria-label="Otwórz menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu">
+            <a href="#informacje">Informacje</a>
+            <a href="#cennik">Cennik</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <a href="tel:+48123456789" class="nav-cta">
+            <span class="nav-cta-label">Zadzwoń</span>
+            <span class="nav-cta-number">+48 123 456 789</span>
+        </a>
+    </div>
+</header>
+
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <div class="hero-copy">
+                <div class="hero-badge">Tradycja • Jakość • Smak</div>
+
+                <h1>Rzemieślnicza<br>Masarnia JASTEW</h1>
+
+                <p class="hero-text">
+                    Wyroby tworzone z charakterem, w oparciu o jakość, rzemiosło i sprawdzone receptury.
+                    Zamówienia przyjmujemy telefonicznie oraz mailowo.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#cennik" class="btn btn-primary">Zobacz cennik</a>
+                    <a href="#kontakt" class="btn btn-secondary">Skontaktuj się</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="informacje" class="section info-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">Informacje</span>
+                <h2>Tradycja, jakość i konkret</h2>
+                <p>
+                    Stawiamy na uczciwy produkt, przejrzystą ofertę i bezpośredni kontakt z klientem.
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Rzemieślnicze podejście</h3>
+                    <p>
+                        Stawiamy na jakość, prosty skład i wyroby przygotowywane z dbałością o smak oraz świeżość.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Oferta dla klientów</h3>
+                    <p>
+                        Zamówienia realizowane są bez sklepu internetowego — klient kontaktuje się z nami
+                        bezpośrednio telefonicznie lub mailowo.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Przejrzysty cennik</h3>
+                    <p>
+                        Na stronie znajdziesz aktualną tabelę produktów. To wygodny sposób, aby szybko sprawdzić ofertę.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cennik" class="section pricing-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">Cennik</span>
+                <h2>Oferta produktów</h2>
+                <p>
+                    Poniżej znajduje się przykładowy cennik. Aby złożyć zamówienie, skontaktuj się z nami bezpośrednio.
+                </p>
+            </div>
+
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Produkt</th>
+                            <th>Cena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Produkt 1</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 2</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 3</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 4</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 5</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 6</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 7</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 8</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 9</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 10</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 11</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 12</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 13</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 14</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 15</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 16</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 17</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 18</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 19</td><td>50 zł/kg</td></tr>
+                        <tr><td>Produkt 20</td><td>50 zł/kg</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="section contact-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">Kontakt</span>
+                <h2>Skontaktuj się z nami</h2>
+                <p>
+                    Masz pytanie o produkt, dostępność lub zamówienie? Zadzwoń albo napisz maila.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>E-mail</h3>
+                    <p><a href="mailto:kontakt@jastew.pl">kontakt@jastew.pl</a></p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Adres</h3>
+                    <p>ul. Przykładowa 10, 00-000 Miasto</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Godziny otwarcia</h3>
+                    <p>Pon–Pt: 08:00–17:00<br>Sob: 08:00–13:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bottom-contact-bar">
+        <div class="container bottom-contact-inner">
+            <div class="bottom-contact-item">
+                <strong>Telefon:</strong>
+                <a href="tel:+48123456789">+48 123 456 789</a>
+            </div>
+            <div class="bottom-contact-item">
+                <strong>E-mail:</strong>
+                <a href="mailto:kontakt@jastew.pl">kontakt@jastew.pl</a>
+            </div>
+            <div class="bottom-contact-item">
+                <strong>Adres:</strong>
+                ul. Przykładowa 10, 00-000 Miasto
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
