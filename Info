@@ -1,0 +1,111 @@
+https://jastew-masarnia.onrender.com
+
+
+Pozniej jak Tom zaplaci:
+
+ja bym chcial aby adres byl: https://jastew-masarnia.com
+
+Super pomysł 👍 własna domena wygląda dużo bardziej profesjonalnie.
+Adres:
+
+https://jastew-masarnia.com
+
+jest jak najbardziej możliwy — trzeba zrobić 3 krótkie kroki.
+
+1️⃣ Kup domenę
+
+Najpierw musisz kupić domenę jastew-masarnia.com u rejestratora.
+
+Polecam (najprostsze w PL):
+
+opcja 1
+
+https://www.ovh.pl
+
+opcja 2
+
+https://domeny.pl
+
+opcja 3
+
+https://home.pl
+
+Koszt roczny:
+
+~40–60 zł / rok
+
+Po zakupie będziesz miał panel DNS.
+
+2️⃣ Dodaj domenę w Render
+
+Po deployu strony w Render:
+
+wejdź w:
+
+Render Dashboard
+→ Twój serwis
+→ Settings
+→ Custom Domains
+
+kliknij:
+
+Add Custom Domain
+
+i wpisz:
+
+jastew-masarnia.com
+
+oraz
+
+www.jastew-masarnia.com
+3️⃣ Dodaj rekord DNS
+
+W panelu domeny dodajesz rekord:
+
+A record
+Name: @
+Type: A
+Value: 216.24.57.1
+
+oraz
+
+CNAME
+Name: www
+Type: CNAME
+Value: jastew-masarnia.onrender.com
+4️⃣ Po 2–10 minutach
+
+Twoja strona będzie działać pod:
+
+https://jastew-masarnia.com
+
+Render automatycznie doda:
+
+SSL (https)
+
+czyli zieloną kłódkę 🔒.
+
+Ważna rada (bardzo)
+
+Kup od razu dwie domeny:
+
+jastew-masarnia.com
+jastew-masarnia.pl
+
+Dlaczego?
+
+Bo ktoś może kupić drugą i przejąć ruch.
+
+Koszt:
+
+~80 zł / rok za obie
+
+a masz spokój.
+
+Jeśli chcesz, mogę Ci jeszcze zrobić 3 rzeczy które mocno podniosą poziom strony
+
+1️⃣ Google Maps w sekcji kontakt
+2️⃣ kliknięcie → telefon (mobile)
+3️⃣ SEO żeby Google pokazywało masarnię
+
+To zajmuje 5 minut, a robi ogromną różnicę.
