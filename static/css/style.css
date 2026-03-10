@@ -33,6 +33,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: var(--nav-height);
 }
 
 body.menu-open {
@@ -92,20 +93,29 @@ a {
 }
 
 /* NAVBAR */
+
 .top-navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+
     background: rgba(5, 5, 5, 0.62);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+
     border-bottom: 1px solid rgba(255,255,255,0.04);
-    transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .top-navbar.scrolled {
     background: rgba(5, 5, 5, 0.86);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
     border-bottom-color: rgba(255,255,255,0.06);
 }
 
