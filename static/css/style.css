@@ -575,6 +575,14 @@ a {
     font-weight: 800;
 }
 
+.map-container {
+    margin-top: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 22px 54px rgba(0,0,0,0.34);
+}
+
 .contact-card a:hover {
     color: #ff3c3c;
 }
