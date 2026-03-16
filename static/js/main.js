@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
 
     const revealElements = document.querySelectorAll(
-        ".hero-copy, .section-heading, .info-card, .pricing-table-wrapper, .contact-card, .bottom-contact-item"
+    ".hero-copy, .section-heading, .info-card, .pricing-table-wrapper, .contact-card, .contact-form-wrapper, .map-container, .bottom-contact-item"
     );
 
     revealElements.forEach(el => el.classList.add("reveal"));
