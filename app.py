@@ -4,11 +4,7 @@ import time
 from email.mime.text import MIMEText
 from email.header import Header
 
-from dotenv import load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash
-
-# wczytaj zmienne z pliku .env
-load_dotenv()
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "zmien-to-na-wlasny-sekret")
