@@ -255,11 +255,12 @@
         <div class="contact-form-wrapper">
             <div class="contact-form-box">
                 <div class="contact-form-header">
-                    <h3>Formularz zamówienia</h3>
-                    <p>
-                        Wypełnij formularz, a skontaktujemy się z Tobą w sprawie zamówienia lub dostępności produktów.
-                    </p>
-                </div>
+    <h3>Złóż zamówienie lub zapytaj o dostępność</h3>
+    <p>
+        Wypełnij formularz, a skontaktujemy się z Tobą możliwie szybko,
+        aby potwierdzić dostępność produktów oraz termin odbioru.
+    </p>
+</div>
 
                 <form action="{{ url_for('kontakt') }}" method="POST" class="contact-form" novalidate>
                     <input type="hidden" name="form_time" id="form_time" value="">
@@ -364,10 +365,12 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Wyślij formularz</button>
+                        <button type="submit" class="btn btn-primary">
+    Wyślij zapytanie o zamówienie
+</button>
                         <p class="form-note">
-                            Pola oznaczone gwiazdką są wymagane. Po wysłaniu wrócisz do sekcji kontaktu z potwierdzeniem.
-                        </p>
+    Pola oznaczone * są wymagane. Odpowiadamy zazwyczaj tego samego dnia roboczego.
+</p>
                     </div>
                 </form>
             </div>

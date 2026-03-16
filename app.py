@@ -98,7 +98,7 @@ def kontakt():
         return redirect(url_for("home", _anchor="kontakt"))
 
     # =========================
-    # TREŚĆ MAILA
+    # TREŚĆ MAILA DO FIRMY
     # =========================
     subject = f"Nowe zamówienie ze strony – {name}"
 
@@ -147,11 +147,49 @@ Formularz masarniajastew.pl
                 SMTP_PASSWORD
             )
 
+            # =========================
+            # MAIL DO FIRMY
+            # =========================
             server.sendmail(
                 MAIL_FROM,
                 [MAIL_TO],
                 msg.as_string()
             )
+
+            # =========================
+            # MAIL DO KLIENTA
+            # =========================
+            if email:
+                client_subject = "Potwierdzenie zapytania – Masarnia JASTEW"
+
+                client_body = f"""
+Dziękujemy za kontakt.
+
+Otrzymaliśmy Twoje zapytanie dotyczące zamówienia:
+
+Produkt: {product}
+Ilość: {quantity}
+Preferowana data odbioru: {pickup_date if pickup_date else "Nie podano"}
+
+Skontaktujemy się z Tobą możliwie szybko,
+aby potwierdzić dostępność i termin odbioru.
+
+Masarnia JASTEW
+Jastew 162
+tel. 694 810 691
+e-mail: kontakt@masarniajastew.pl
+""".strip()
+
+                client_msg = MIMEText(client_body, "plain", "utf-8")
+                client_msg["Subject"] = Header(client_subject, "utf-8")
+                client_msg["From"] = MAIL_FROM
+                client_msg["To"] = email
+
+                server.sendmail(
+                    MAIL_FROM,
+                    [email],
+                    client_msg.as_string()
+                )
 
         flash("Formularz wysłany. Skontaktujemy się z Tobą w sprawie zamówienia.", "success")
 
