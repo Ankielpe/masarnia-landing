@@ -1,10 +1,11 @@
+<!DOCTYPE html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masarnia JASTEW – Tradycyjne wyroby wędliniarskie</title>
     <meta name="description" content="Rzemieślnicza Masarnia JASTEW w Jastwi. Tradycyjne wędliny, kiełbasy i wyroby mięsne najwyższej jakości. Sprawdź cennik i skontaktuj się z nami.">
     <meta name="keywords" content="masarnia jastew, masarnia jastwia, wędliny, kiełbasa, wyroby mięsne, baleron, boczek, szynka">
-
     <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="Masarnia JASTEW – Tradycyjne wyroby wędliniarskie">
@@ -17,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
 </head>
 <body>
@@ -40,7 +40,7 @@
             <a href="#kontakt">Kontakt</a>
         </nav>
 
-        <a href="tel:+48 694 810 691" class="nav-cta">
+        <a href="tel:+48694810691" class="nav-cta">
             <span class="nav-cta-label">Zadzwoń</span>
             <span class="nav-cta-number">+48 694 810 691</span>
         </a>
@@ -132,85 +132,71 @@
                         <td>Tradycyjna kiełbasa wędzona na naturalnym drewnie, soczysta i aromatyczna – klasyka polskiego stołu.</td>
                         <td>42 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Baleron</td>
                         <td>Delikatny i kruchy baleron o głębokim, wędzonym aromacie. Idealny na kanapki i zimne półmiski.</td>
                         <td>40 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Schab wędzony</td>
                         <td>Chudy, lekko wędzony schab o wyrazistym smaku – doskonały dla miłośników tradycyjnych wędlin.</td>
                         <td>41 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Boczek</td>
                         <td>Soczysty boczek długo wędzony w naturalnym dymie, z idealnym balansem mięsa i tłuszczu.</td>
                         <td>41 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Żeberko wędzone</td>
                         <td>Aromatyczne żeberka o intensywnym smaku wędzenia – świetne do gotowania, bigosu lub zupy.</td>
                         <td>24 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Polędwiczka wędzona</td>
                         <td>Delikatna polędwiczka o subtelnym aromacie wędzenia – miękka, soczysta i bardzo elegancka w smaku.</td>
                         <td>47 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Szynka z liściem</td>
                         <td>Tradycyjna szynka przyprawiona liściem laurowym i naturalnymi przyprawami, długo wędzona.</td>
                         <td>44 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Słonina</td>
                         <td>Klasyczna słonina o intensywnym smaku – idealna do chleba ze świeżą cebulą lub ogórkiem kiszonym.</td>
                         <td>22 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Podgardle</td>
                         <td>Tłustsza, bardzo aromatyczna część wieprzowiny – doskonała do smażenia, bigosu i tradycyjnych potraw.</td>
                         <td>25 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Salceson</td>
                         <td>Tradycyjny wyrób podrobowy o bogatym smaku i charakterystycznej konsystencji.</td>
                         <td>29 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Kaszanka</td>
                         <td>Domowa kaszanka przygotowana według sprawdzonej receptury – idealna na patelnię lub grill.</td>
                         <td>20 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Kiełbasa biała</td>
                         <td>Surowa kiełbasa o delikatnym smaku czosnku i majeranku – doskonała do żurku i na Wielkanoc.</td>
                         <td>26 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Kiełbasa zwyczajna</td>
                         <td>Klasyczna kiełbasa o wyważonym smaku i lekkim aromacie wędzenia.</td>
                         <td>27 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Pasztet pieczony (foremka)</td>
                         <td>Domowy pasztet pieczony według tradycyjnej receptury – delikatny, aromatyczny i sycący.</td>
                         <td>27 zł/kg</td>
                     </tr>
-
                     <tr>
                         <td>Pasztetowa</td>
                         <td>Kremowa w smaku pasztetowa idealna do świeżego chleba.</td>
@@ -235,7 +221,7 @@
         <div class="contact-grid">
             <div class="contact-card">
                 <h3>Telefon</h3>
-                <p><a href="tel:+48 694 810 691">+48 694 810 691</a></p>
+                <p><a href="tel:+48694810691">+48 694 810 691</a></p>
             </div>
 
             <div class="contact-card">
@@ -253,30 +239,139 @@
                 <p>Pon–Pt: 08:00–17:00<br>Sob: 08:00–14:00</p>
             </div>
         </div>
+
         {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <div class="flash-messages">
-      {% for category, message in messages %}
-        <div class="flash-message flash-{{ category }}">
-          {{ message }}
-        </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="flash-message flash-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
 
-<div class="contact-form-wrapper">
-    <div class="contact-form-box">
-        <div class="contact-form-header">
-            <h3>Formularz zamówienia</h3>
-            <p>
-                Formularz będzie dostępny wkrótce.
-                W międzyczasie prosimy o kontakt telefoniczny lub mailowy.
-            </p>
-        </div>
-    </div>
-</div>
+        <div class="contact-form-wrapper">
+            <div class="contact-form-box">
+                <div class="contact-form-header">
+                    <h3>Formularz zamówienia</h3>
+                    <p>
+                        Wypełnij formularz, a skontaktujemy się z Tobą w sprawie zamówienia lub dostępności produktów.
+                    </p>
+                </div>
 
+                <form action="{{ url_for('kontakt') }}" method="POST" class="contact-form" novalidate>
+                    <input type="hidden" name="form_time" id="form_time" value="">
+
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Nie wypełniaj tego pola</label>
+                        <input
+                            type="text"
+                            name="website"
+                            id="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="name">Imię i nazwisko *</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Np. Jan Kowalski"
+                                required
+                                minlength="2"
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="phone">Telefon *</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Np. 694 810 691"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">E-mail</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Np. jan@example.com"
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="product">Produkt *</label>
+                            <select id="product" name="product" required>
+                                <option value="" selected disabled>Wybierz produkt</option>
+                                <option value="Kiełbasa wiejska">Kiełbasa wiejska</option>
+                                <option value="Baleron">Baleron</option>
+                                <option value="Schab wędzony">Schab wędzony</option>
+                                <option value="Boczek">Boczek</option>
+                                <option value="Żeberko wędzone">Żeberko wędzone</option>
+                                <option value="Polędwiczka wędzona">Polędwiczka wędzona</option>
+                                <option value="Szynka z liściem">Szynka z liściem</option>
+                                <option value="Słonina">Słonina</option>
+                                <option value="Podgardle">Podgardle</option>
+                                <option value="Salceson">Salceson</option>
+                                <option value="Kaszanka">Kaszanka</option>
+                                <option value="Kiełbasa biała">Kiełbasa biała</option>
+                                <option value="Kiełbasa zwyczajna">Kiełbasa zwyczajna</option>
+                                <option value="Pasztet pieczony (foremka)">Pasztet pieczony (foremka)</option>
+                                <option value="Pasztetowa">Pasztetowa</option>
+                                <option value="Inny produkt">Inny produkt</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="quantity">Ilość *</label>
+                            <input
+                                type="text"
+                                id="quantity"
+                                name="quantity"
+                                placeholder="Np. 2 kg"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="pickup_date">Preferowana data odbioru</label>
+                            <input
+                                type="date"
+                                id="pickup_date"
+                                name="pickup_date"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Dodatkowe informacje</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Np. proszę o kontakt po godzinie 15:00 lub dodatkowe pytanie o dostępność."
+                            maxlength="2000"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Wyślij formularz</button>
+                        <p class="form-note">
+                            Pola oznaczone gwiazdką są wymagane. Po wysłaniu wrócisz do sekcji kontaktu z potwierdzeniem.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="map-container">
             <iframe
@@ -296,7 +391,7 @@
     <div class="container bottom-contact-inner">
         <div class="bottom-contact-item">
             <strong>Telefon:</strong>
-            <a href="tel:+48123456789">+48 694 810 691</a>
+            <a href="tel:+48694810691">+48 694 810 691</a>
         </div>
         <div class="bottom-contact-item">
             <strong>E-mail:</strong>
