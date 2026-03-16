@@ -59,7 +59,7 @@
 
             <p class="hero-text">
                 Wyroby tworzone z charakterem, w oparciu o jakość, rzemiosło i sprawdzone receptury.
-                Zamówienia przyjmujemy telefonicznie, mailowo oraz przez formularz.
+                Zamówienia przyjmujemy telefonicznie oraz mailowo.
             </p>
 
             <div class="hero-buttons">
@@ -240,7 +240,7 @@
 
             <div class="contact-card">
                 <h3>E-mail</h3>
-                <p><a href="mailto:kontakt@masarniajastew.pll">kontakt@masarniajastew.pl</a></p>
+                <p><a href="mailto:kontakt@masarniajastew.pl">kontakt@masarniajastew.pl</a></p>
             </div>
 
             <div class="contact-card">
@@ -264,89 +264,19 @@
     </div>
   {% endif %}
 {% endwith %}
-        <div class="contact-form-wrapper reveal">
-            <div class="contact-form-box">
-                <div class="contact-form-header">
-                    <h3>Formularz zamówienia / zapytania</h3>
-                    <p>
-                        Wypełnij formularz, a skontaktujemy się z Tobą w sprawie zamówienia lub dostępności produktów.
-                    </p>
-                </div>
 
-                <form class="contact-form" method="POST" action="/kontakt" autocomplete="on">
-                    <div class="form-grid">
-                        <div class="form-field">
-                            <label for="name">Imię i nazwisko</label>
-                            <input type="text" id="name" name="name" placeholder="Np. Jan Kowalski" required>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Np. 694 810 691" required>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="email">Adres e-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Np. jan@email.pl">
-                        </div>
-
-                        <div class="form-field">
-                            <label for="product">Produkt</label>
-                            <select id="product" name="product" required>
-                                <option value="">Wybierz produkt</option>
-                                <option value="Kiełbasa wiejska">Kiełbasa wiejska</option>
-                                <option value="Baleron">Baleron</option>
-                                <option value="Schab wędzony">Schab wędzony</option>
-                                <option value="Boczek">Boczek</option>
-                                <option value="Żeberko wędzone">Żeberko wędzone</option>
-                                <option value="Polędwiczka wędzona">Polędwiczka wędzona</option>
-                                <option value="Szynka z liściem">Szynka z liściem</option>
-                                <option value="Słonina">Słonina</option>
-                                <option value="Podgardle">Podgardle</option>
-                                <option value="Salceson">Salceson</option>
-                                <option value="Kaszanka">Kaszanka</option>
-                                <option value="Kiełbasa biała">Kiełbasa biała</option>
-                                <option value="Kiełbasa zwyczajna">Kiełbasa zwyczajna</option>
-                                <option value="Pasztet pieczony (foremka)">Pasztet pieczony (foremka)</option>
-                                <option value="Pasztetowa">Pasztetowa</option>
-                                <option value="Inny produkt / kilka produktów">Inny produkt / kilka produktów</option>
-                            </select>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="quantity">Ilość</label>
-                            <input type="text" id="quantity" name="quantity" placeholder="Np. 2 kg / 5 szt." required>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="pickup_date">Preferowana data odbioru</label>
-                            <input type="date" id="pickup_date" name="pickup_date">
-                        </div>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="message">Dodatkowe informacje</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Np. Proszę o przygotowanie zamówienia na piątek. Interesuje mnie też dostępność kaszanki i boczku."></textarea>
-                    </div>
-
-                    <!-- Honeypot anti-spam -->
-                    <div class="hp-field" aria-hidden="true">
-                        <label for="website">Nie wypełniaj tego pola</label>
-                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                    </div>
-
-                    <!-- Timestamp anti-spam -->
-                    <input type="hidden" id="form_time" name="form_time" value="">
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Wyślij formularz</button>
-                        <p class="form-note">
-                            Wysłanie formularza nie oznacza automatycznego potwierdzenia zamówienia — skontaktujemy się z Tobą, aby je potwierdzić.
-                        </p>
-                    </div>
-                </form>
-            </div>
+<div class="contact-form-wrapper">
+    <div class="contact-form-box">
+        <div class="contact-form-header">
+            <h3>Formularz zamówienia</h3>
+            <p>
+                Formularz będzie dostępny wkrótce.
+                W międzyczasie prosimy o kontakt telefoniczny lub mailowy.
+            </p>
         </div>
+    </div>
+</div>
+
 
         <div class="map-container">
             <iframe
