@@ -4,7 +4,6 @@ import time
 from datetime import datetime, timezone
 from email.mime.text import MIMEText
 from email.header import Header
-from email.utils import formatdate, make_msgid
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 
@@ -166,10 +165,6 @@ Formularz masarniajastew.pl
     msg["Subject"] = Header(subject, "utf-8")
     msg["From"] = MAIL_FROM
     msg["To"] = MAIL_TO
-    msg["Date"] = formatdate(localtime=True)
-    msg["Message-ID"] = make_msgid(domain="masarniajastew.pl")
-    msg["X-Order-ID"] = order_id
-    msg["X-Source"] = "masarniajastew.pl-form"
 
     if email:
         msg["Reply-To"] = email
@@ -182,9 +177,7 @@ Formularz masarniajastew.pl
             raise ValueError("Brak SMTP w .env")
 
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
-            server.ehlo()
             server.starttls()
-            server.ehlo()
             server.login(SMTP_USERNAME, SMTP_PASSWORD)
 
             # =========================
@@ -228,10 +221,6 @@ e-mail: kontakt@masarniajastew.pl
                 client_msg["Subject"] = Header(client_subject, "utf-8")
                 client_msg["From"] = MAIL_FROM
                 client_msg["To"] = email
-                client_msg["Date"] = formatdate(localtime=True)
-                client_msg["Message-ID"] = make_msgid(domain="masarniajastew.pl")
-                client_msg["X-Order-ID"] = order_id
-                client_msg["X-Source"] = "masarniajastew.pl-confirmation"
 
                 server.sendmail(
                     MAIL_FROM,
