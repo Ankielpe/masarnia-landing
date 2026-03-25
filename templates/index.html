@@ -309,39 +309,52 @@
                             >
                         </div>
 
-                        <div class="form-field">
-                            <label for="product">Produkt *</label>
-                            <select id="product" name="product" required>
-                                <option value="" selected disabled>Wybierz produkt</option>
-                                <option value="Kiełbasa wiejska">Kiełbasa wiejska</option>
-                                <option value="Baleron">Baleron</option>
-                                <option value="Schab wędzony">Schab wędzony</option>
-                                <option value="Boczek">Boczek</option>
-                                <option value="Żeberko wędzone">Żeberko wędzone</option>
-                                <option value="Polędwiczka wędzona">Polędwiczka wędzona</option>
-                                <option value="Szynka z liściem">Szynka z liściem</option>
-                                <option value="Słonina">Słonina</option>
-                                <option value="Podgardle">Podgardle</option>
-                                <option value="Salceson">Salceson</option>
-                                <option value="Kaszanka">Kaszanka</option>
-                                <option value="Kiełbasa biała">Kiełbasa biała</option>
-                                <option value="Kiełbasa zwyczajna">Kiełbasa zwyczajna</option>
-                                <option value="Pasztet pieczony (foremka)">Pasztet pieczony (foremka)</option>
-                                <option value="Pasztetowa">Pasztetowa</option>
-                                <option value="Inny produkt">Inny produkt</option>
-                            </select>
-                        </div>
+<div class="form-field form-field-full">
+    <label>Produkty i ilości *</label>
 
-                        <div class="form-field">
-                            <label for="quantity">Ilość *</label>
-                            <input
-                                type="text"
-                                id="quantity"
-                                name="quantity"
-                                placeholder="Np. 2 kg"
-                                required
-                            >
-                        </div>
+    <div id="order-items">
+        <div class="order-item">
+            <div class="form-grid order-item-grid">
+                <div class="form-field">
+                    <label>Produkt *</label>
+                    <select name="product[]" required>
+                        <option value="" selected disabled>Wybierz produkt</option>
+                        <option value="Kiełbasa wiejska">Kiełbasa wiejska</option>
+                        <option value="Baleron">Baleron</option>
+                        <option value="Schab wędzony">Schab wędzony</option>
+                        <option value="Boczek">Boczek</option>
+                        <option value="Żeberko wędzone">Żeberko wędzone</option>
+                        <option value="Polędwiczka wędzona">Polędwiczka wędzona</option>
+                        <option value="Szynka z liściem">Szynka z liściem</option>
+                        <option value="Słonina">Słonina</option>
+                        <option value="Podgardle">Podgardle</option>
+                        <option value="Salceson">Salceson</option>
+                        <option value="Kaszanka">Kaszanka</option>
+                        <option value="Kiełbasa biała">Kiełbasa biała</option>
+                        <option value="Kiełbasa zwyczajna">Kiełbasa zwyczajna</option>
+                        <option value="Pasztet pieczony (foremka)">Pasztet pieczony (foremka)</option>
+                        <option value="Pasztetowa">Pasztetowa</option>
+                        <option value="Inny produkt">Inny produkt</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label>Ilość *</label>
+                    <input
+                        type="text"
+                        name="quantity[]"
+                        placeholder="Np. 2 kg"
+                        required
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" id="add-order-item" class="btn btn-secondary">
+        Dodaj kolejny produkt
+    </button>
+</div>
 
                         <div class="form-field">
                             <label for="pickup_date">Preferowana data odbioru</label>

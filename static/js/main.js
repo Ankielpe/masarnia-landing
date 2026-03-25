@@ -114,4 +114,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", closeMenu);
+
+        const orderItems = document.getElementById("order-items");
+    const addOrderItemBtn = document.getElementById("add-order-item");
+
+    function getOrderItemTemplate() {
+        return `
+            <div class="order-item">
+                <div class="form-grid order-item-grid">
+                    <div class="form-field">
+                        <label>Produkt *</label>
+                        <select name="product[]" required>
+                            <option value="" selected disabled>Wybierz produkt</option>
+                            <option value="Kiełbasa wiejska">Kiełbasa wiejska</option>
+                            <option value="Baleron">Baleron</option>
+                            <option value="Schab wędzony">Schab wędzony</option>
+                            <option value="Boczek">Boczek</option>
+                            <option value="Żeberko wędzone">Żeberko wędzone</option>
+                            <option value="Polędwiczka wędzona">Polędwiczka wędzona</option>
+                            <option value="Szynka z liściem">Szynka z liściem</option>
+                            <option value="Słonina">Słonina</option>
+                            <option value="Podgardle">Podgardle</option>
+                            <option value="Salceson">Salceson</option>
+                            <option value="Kaszanka">Kaszanka</option>
+                            <option value="Kiełbasa biała">Kiełbasa biała</option>
+                            <option value="Kiełbasa zwyczajna">Kiełbasa zwyczajna</option>
+                            <option value="Pasztet pieczony (foremka)">Pasztet pieczony (foremka)</option>
+                            <option value="Pasztetowa">Pasztetowa</option>
+                            <option value="Inny produkt">Inny produkt</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Ilość *</label>
+                        <input
+                            type="text"
+                            name="quantity[]"
+                            placeholder="Np. 2 kg"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="order-item-actions">
+                    <button type="button" class="btn btn-secondary remove-order-item">
+                        Usuń ten produkt
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    if (addOrderItemBtn && orderItems) {
+        addOrderItemBtn.addEventListener("click", () => {
+            orderItems.insertAdjacentHTML("beforeend", getOrderItemTemplate());
+        });
+
+        orderItems.addEventListener("click", (e) => {
+            const removeBtn = e.target.closest(".remove-order-item");
+            if (!removeBtn) return;
+
+            const items = orderItems.querySelectorAll(".order-item");
+            if (items.length <= 1) {
+                return;
+            }
+
+            const item = removeBtn.closest(".order-item");
+            if (item) {
+                item.remove();
+            }
+        });
+    }
 });

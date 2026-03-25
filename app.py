@@ -30,7 +30,6 @@ MIN_FORM_TIME_MS = 3000
 def home():
     return render_template("index.html")
 
-
 @app.route("/kontakt", methods=["POST"])
 def kontakt():
 
@@ -64,10 +63,23 @@ def kontakt():
     name = (request.form.get("name") or "").strip()
     phone = (request.form.get("phone") or "").strip()
     email = (request.form.get("email") or "").strip()
-    product = (request.form.get("product") or "").strip()
-    quantity = (request.form.get("quantity") or "").strip()
     pickup_date = (request.form.get("pickup_date") or "").strip()
     message = (request.form.get("message") or "").strip()
+
+    products = request.form.getlist("product[]")
+    quantities = request.form.getlist("quantity[]")
+
+    order_items = []
+
+    for product, quantity in zip(products, quantities):
+        product = (product or "").strip()
+        quantity = (quantity or "").strip()
+
+        if product or quantity:
+            order_items.append({
+                "product": product,
+                "quantity": quantity
+            })
 
     # =========================
     # WALIDACJA
@@ -80,11 +92,14 @@ def kontakt():
     if len(phone) < 7:
         errors.append("Podaj poprawny numer telefonu.")
 
-    if not product:
-        errors.append("Wybierz produkt.")
+    if not order_items:
+        errors.append("Dodaj co najmniej jeden produkt.")
 
-    if not quantity:
-        errors.append("Podaj ilość.")
+    for i, item in enumerate(order_items, start=1):
+        if not item["product"]:
+            errors.append(f"Pozycja {i}: wybierz produkt.")
+        if not item["quantity"]:
+            errors.append(f"Pozycja {i}: podaj ilość.")
 
     if email and "@" not in email:
         errors.append("Podaj poprawny adres e-mail.")
@@ -96,6 +111,12 @@ def kontakt():
         for err in errors:
             flash(err, "error")
         return redirect(url_for("home", _anchor="kontakt"))
+
+    order_lines = []
+    for i, item in enumerate(order_items, start=1):
+        order_lines.append(f"{i}. {item['product']} — {item['quantity']}")
+
+    order_summary = "\n".join(order_lines)
 
     # =========================
     # TREŚĆ MAILA DO FIRMY
@@ -111,8 +132,7 @@ Telefon: {phone}
 E-mail: {email if email else "Nie podano"}
 
 SZCZEGÓŁY ZAMÓWIENIA
-Produkt: {product}
-Ilość: {quantity}
+{order_summary}
 Preferowana data odbioru: {pickup_date if pickup_date else "Nie podano"}
 
 DODATKOWE INFORMACJE
@@ -167,8 +187,8 @@ Dziękujemy za kontakt.
 
 Otrzymaliśmy Twoje zapytanie dotyczące zamówienia:
 
-Produkt: {product}
-Ilość: {quantity}
+{order_summary}
+
 Preferowana data odbioru: {pickup_date if pickup_date else "Nie podano"}
 
 Skontaktujemy się z Tobą możliwie szybko,

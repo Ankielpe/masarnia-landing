@@ -1,0 +1,110 @@
+Piotr, już sprawdziłem Twój kod i powiem Ci dokładnie gdzie wkleić analytics, żeby działało. 👍
+
+Twoja strona to jeden plik HTML:
+📄 index.html
+
+W nim jest sekcja:
+
+<head>
+
+i tam dodajemy kod Google Analytics.
+
+1️⃣ Gdzie dokładnie wkleić kod
+
+W Twoim pliku znajdź fragment:
+
+<meta property="og:url" content="https://masarniajastew.pl">
+
+To jest w <head>.
+
+Tuż POD nim wklej kod analytics.
+
+Powinno wyglądać tak:
+
+<meta property="og:url" content="https://masarniajastew.pl">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-XXXXXXX');
+</script>
+
+Zamiast G-XXXXXXX wkleisz swój identyfikator.
+
+2️⃣ Skąd wziąć ten kod
+
+Wejdź tu:
+
+👉 https://analytics.google.com
+
+Potem:
+
+1️⃣ Administracja
+2️⃣ Utwórz usługę (GA4)
+3️⃣ Strona internetowa
+4️⃣ podaj
+
+https://masarniajastew.pl
+
+Dostaniesz kod jak wyżej.
+
+3️⃣ Co się stanie potem
+
+Po dodaniu:
+
+zobaczysz ile osób wchodzi na stronę
+
+z jakiego kraju
+
+czy z telefonu czy komputera
+
+ile czasu siedzą
+
+które sekcje oglądają
+
+Czyli np:
+
+Dzisiaj
+17 użytkowników
+Polska 14
+Niemcy 2
+UK 1
+4️⃣ Bardzo ważna rzecz przy Flask
+
+Po dodaniu kodu musisz zrobić:
+
+git add .
+git commit -m "analytics"
+git push
+
+Render zrobi deploy i analytics zacznie działać.
+
+💡 Dobra wiadomość
+
+Twoja strona jest dobrze przygotowana pod SEO:
+
+meta description ✔
+
+OG tags ✔
+
+schema.org ✔
+
+Widziałem to w Twoim kodzie:
+
+Czyli po dodaniu analytics masz już prawie pełny marketing stack strony.
+
+🔥 Mogę Ci jeszcze pokazać jedną mega rzecz
+
+Jak dodać Microsoft Clarity, który pokazuje:
+
+nagrania użytkowników
+
+gdzie klikają
+
+jak scrollują
+
+To jest 2 linijki kodu i działa lepiej niż analytics do UX.
