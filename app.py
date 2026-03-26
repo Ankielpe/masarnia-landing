@@ -121,7 +121,7 @@ def kontakt():
     # =========================
     # TREŚĆ MAILA DO FIRMY
     # =========================
-    subject = f"Nowe zamówienie ze strony – {name}"
+    subject = f"Nowe zamówienie #{int(time.time())} – {name}"
 
     body = f"""
 NOWE ZAMÓWIENIE ZE STRONY
