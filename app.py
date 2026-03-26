@@ -1,7 +1,6 @@
 import os
 import smtplib
 import time
-from datetime import datetime, timezone
 from email.mime.text import MIMEText
 from email.header import Header
 
@@ -9,6 +8,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "zmien-to-na-wlasny-sekret")
+
 
 # =========================
 # KONFIGURACJA MAILA
@@ -26,20 +26,13 @@ MAIL_FROM = os.environ.get("MAIL_FROM", SMTP_USERNAME)
 MIN_FORM_TIME_MS = 3000
 
 
-def build_order_id() -> str:
-    """
-    Unikalny identyfikator zamówienia do tematu i treści wiadomości.
-    """
-    return datetime.now(timezone.utc).strftime("JASTEW-%Y%m%d-%H%M%S")
-
-
 @app.route("/")
 def home():
     return render_template("index.html")
 
-
 @app.route("/kontakt", methods=["POST"])
 def kontakt():
+
     # =========================
     # ANTY-SPAM (honeypot)
     # =========================
@@ -119,12 +112,6 @@ def kontakt():
             flash(err, "error")
         return redirect(url_for("home", _anchor="kontakt"))
 
-    # =========================
-    # BUDOWANIE ZAMÓWIENIA
-    # =========================
-    order_id = build_order_id()
-    submitted_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
     order_lines = []
     for i, item in enumerate(order_items, start=1):
         order_lines.append(f"{i}. {item['product']} — {item['quantity']}")
@@ -134,16 +121,10 @@ def kontakt():
     # =========================
     # TREŚĆ MAILA DO FIRMY
     # =========================
-    subject = f"Nowe zamówienie {order_id} – {name}"
+    subject = f"Nowe zamówienie ze strony – {name}"
 
     body = f"""
 NOWE ZAMÓWIENIE ZE STRONY
-
-ID ZAMÓWIENIA
-{order_id}
-
-DATA WYSŁANIA
-{submitted_at}
 
 DANE KLIENTA
 Imię i nazwisko: {name}
@@ -173,12 +154,18 @@ Formularz masarniajastew.pl
     # WYSYŁKA MAILA
     # =========================
     try:
+
         if not SMTP_USERNAME or not SMTP_PASSWORD:
             raise ValueError("Brak SMTP w .env")
 
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as server:
+
             server.starttls()
-            server.login(SMTP_USERNAME, SMTP_PASSWORD)
+
+            server.login(
+                SMTP_USERNAME,
+                SMTP_PASSWORD
+            )
 
             # =========================
             # MAIL DO FIRMY
@@ -193,17 +180,13 @@ Formularz masarniajastew.pl
             # MAIL DO KLIENTA
             # =========================
             if email:
-                client_subject = f"Potwierdzenie zapytania {order_id} – Masarnia JASTEW"
+                client_subject = "Potwierdzenie zapytania – Masarnia JASTEW"
 
                 client_body = f"""
 Dziękujemy za kontakt.
 
-Otrzymaliśmy Twoje zapytanie dotyczące zamówienia.
+Otrzymaliśmy Twoje zapytanie dotyczące zamówienia:
 
-ID zamówienia:
-{order_id}
-
-Szczegóły:
 {order_summary}
 
 Preferowana data odbioru: {pickup_date if pickup_date else "Nie podano"}
@@ -231,6 +214,7 @@ e-mail: kontakt@masarniajastew.pl
         flash("Formularz wysłany. Skontaktujemy się z Tobą w sprawie zamówienia.", "success")
 
     except Exception as e:
+
         print(f"[FORM ERROR] {e}")
 
         flash(
